@@ -14,8 +14,41 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA">Треугольник</a>
  */
-public class Triangle {
+public class Triangle implements Polygon{
 
+     /*
+    
+    через Point
+    
+    Point точка1
+    Point точка1
+    Point точка1
+    float a - осн
+    float b -высота
+    
+    
+    s = 1/2 основания на высоту  > т1 +т2 на основание, т3 +т1 на высоту
+    
+        public float getArea(){
+    
+    float area = 1/2 *(sqrt(x1-x2)** + (y1-y2)**) * (sqrt(x1-x2)** + (y1-y3)**)     - проверить пересчитать
+    
+        return (float)area;
+    }
+        public float getPerimeter(){ 
+    
+    float perimeter = (sqrt(x1-x2)** + (y1-y2)**) + (sqrt(x1-x3)** + (y1-y3)**) + (sqrt(x2-x3)** + (y2-y3)**)
+        
+        return (float)perimeter;
+    }
+    
+    Прверить на отриц значения, проверить количество знаков просле запятой, свести до 2хъ.
+    
+    public String toString() {
+    
+    return "Треугольник (площадь = " + getArea() + ", периметр = " + getPerimeter() + ')';
+   
+     */
     /*
      * TODO: Реализовать класс 'Triangle'
      * 1. Используйте наследование.
