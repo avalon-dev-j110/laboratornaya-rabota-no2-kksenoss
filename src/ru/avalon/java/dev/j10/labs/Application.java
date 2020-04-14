@@ -7,6 +7,7 @@ import ru.avalon.java.dev.j10.labs.shapes.Shape;
 import ru.avalon.java.dev.j10.labs.shapes.Polygon;
 import ru.avalon.java.dev.j10.labs.shapes.Rectangle;
 import ru.avalon.java.dev.j10.labs.shapes.Ellipse;
+import ru.avalon.java.dev.j10.labs.shapes.Section;
 
 
 
@@ -15,7 +16,7 @@ import ru.avalon.java.dev.j10.labs.shapes.Ellipse;
 public class Application {
 
     public static void main(String[] args) {
-        Shape[] shapes = new Shape[2];
+        Shape[] shapes = new Shape[4];
         /*shapes[0] =  new Cercle();
         shapes[1] =  new Elipse();
         shapes[2] =  new Polygon();
@@ -32,6 +33,30 @@ public class Application {
         
         shapes[1] = new Triangle(new implPoint(7,2), new implPoint(9,1), new implPoint(6,5));
             System.out.println("тест 2 треуг " + shapes[1].toString());
+            
+        shapes[2] = new Rectangle(new implPoint(2,2), new implPoint(2,20), new implPoint(30,2));
+            System.out.println("тест 2 прямоуг " + shapes[2].toString());
+            
+        shapes[3] = new Rectangle(new implPoint(0,0), new implPoint(0,3), new implPoint(9,0));
+            System.out.println("тест 2 прямоуг " + shapes[3].toString());
+     
+            Shape largestshape = findLargestArea(shapes);
+            System.out.println("Наибольшая площадь " + largestshape);
+     }
+
+    public static Shape findLargestArea(Shape[] shapes){
+        Shape result = null;
+            
+    for (Shape shape : shapes){
+        if(result == null){
+            result = shape;
+        } else {
+            result = result.getArea()>= shape.getArea()?result : shape;
+        }
+    }  
+    return result;
+    }
+}           
     /*    
     Сортировка массива
     Сортировка (упорядочение по значениям) массива a производится методами Arrays.sort(a) 
@@ -56,6 +81,4 @@ public class Application {
          *    площадью. Для поиска фигуры необходимо создать
          *    статический метод в текущем классе (Application).
          */
-    }
 
-}
