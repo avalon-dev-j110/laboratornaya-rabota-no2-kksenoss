@@ -9,6 +9,11 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @author 1
  */
-public class Section {
-    
+public class Section{
+    static double section(Point pointA, Point pointB){
+    double section = Math.sqrt(
+            Math.pow(pointB.getX()-pointA.getX(),2)
+          + Math.pow(pointB.getY()- pointA.getY(),2));
+    return section;
+    }    
 }

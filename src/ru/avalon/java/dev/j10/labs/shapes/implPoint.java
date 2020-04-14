@@ -13,11 +13,11 @@ public class implPoint implements Point {
     
     private int x;
     private int y;
-    public implPoint(){
-        
-   
-}
-
+    
+    public implPoint(int x, int y){
+    this.x = x;
+    this.y = y;
+   }
     
     public void setX(int x) {
     this.x = x;

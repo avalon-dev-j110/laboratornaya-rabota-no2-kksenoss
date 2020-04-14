@@ -16,20 +16,22 @@ package ru.avalon.java.dev.j10.labs.shapes;
  */
 public class Triangle implements Polygon{
     
-    implPoint a; 
-    implPoint b;
-    implPoint c;
-     
-    //s = 1/2 основания на высоту  > т1 +т2 на основание, т3 +т1 на высоту
-    public Triangle (implPoint a, implPoint b, implPoint c){
+   Point a; 
+   Point b;
+   Point c;
+         
+    
+    public Triangle (Point a, Point b, Point c){
     this.a = a;
     this.b = b;
     this.c = c;
+    
     } 
     @Override
-    public float getPerimeter(){  //метод не ест флоат, перевести в дабл коорд точек
+    public float getPerimeter(){  
    // a+ b +c 
-    double perimeter = Math.sqrt(
+    double perimeter = 
+            Math.sqrt(
             (Math.pow((a.getX() - b.getX()),2) + Math.pow((a.getY()- b.getY()),2)))
             + Math.sqrt(
             (Math.pow((b.getX() - c.getX()),2) + Math.pow((b.getY()- c.getY()),2)))
@@ -37,14 +39,51 @@ public class Triangle implements Polygon{
             (Math.pow((a.getX() - c.getX()),2) + Math.pow((a.getY()- c.getY()),2)));
           
     return (float) perimeter;
+     //   S = √p · (p — a)(p — b)(p — c)
+   }
     
-    @Override
-    public float getArea(){
-    //   S = √p · (p — a)(p — b)(p — c)
-        
-    return (float)area;    
+    //потом можно заменить с помощью класса создающего отрезок из 2х точек
+    
+    
+   @Override
+   public float getArea(){
+   float polyPerimeter = getPerimeter() / 2;
+   double area = 
+           Math.sqrt(polyPerimeter * 
+           (polyPerimeter - (Math.pow((a.getX() - b.getX()),2) + Math.pow((a.getY()- b.getY()),2))) 
+            * (polyPerimeter - (Math.pow((b.getX() - c.getX()),2) + Math.pow((b.getY()- c.getY()),2))) 
+            * (polyPerimeter - (Math.pow((a.getX() - c.getX()),2) + Math.pow((a.getY()- c.getY()),2)))
+                    );   
+   
+   return (float)area;    
+   }
+   
+   @Override
+   public String toString() {
+        return "Triangle perimeter = " + getPerimeter() + "// area =" + getArea() + "//a  тестовое" + a.getX() + a.getY();
+   }
+   
+}
+   
+    /*
+     * TODO: Реализовать класс 'Triangle'
+     * 1. Используйте наследование.
+     * 2. Реализуйте все абстрактные методы.
+     */
+
+    
+    
+    /*public float getArea(){
+    
+        double area = Math.sqrt(9);    // - проверить пересчитать
+    //Math.sqrt((x1-x2)** + (y1-y2)**) * (sqrt(x1-x2)** + (y1-y3)**)
+            return (float)area;
     }
-    /*double lineAB = Math.sqrt(
+        
+                
+   */
+    
+ /*double lineAB = Math.sqrt(
             (Math.pow((a.getX() - b.getX()),2) + Math.pow((a.getY()- b.getY()),2)));                    
     return (float)lineAB;
         }
@@ -57,35 +96,4 @@ public class Triangle implements Polygon{
     double lineAC = Math.sqrt(
             (Math.pow((a.getX() - c.getX()),2) + Math.pow((a.getY()- c.getY()),2))); 
         return (float)lineAC;
-        }
-   */
-   
-}
-    
-    //Прверить на отриц значения, проверить количество знаков просле запятой, свести до 2хъ.
-   /* 
-    public String toString() {
-    
-    return "Треугольник (площадь = " + getArea() + ", периметр = " + getPerimeter() + ')';
-   }
-    */
-    /*
-     * TODO: Реализовать класс 'Triangle'
-     * 1. Используйте наследование.
-     * 2. Реализуйте все абстрактные методы.
-     */
-
-    
-
-
-    
-    /*public float getArea(){
-    
-        double area = Math.sqrt(9);    // - проверить пересчитать
-    //Math.sqrt((x1-x2)** + (y1-y2)**) * (sqrt(x1-x2)** + (y1-y3)**)
-            return (float)area;
-    }
-        
-        Разобраться с методами, 
-        
-   */
+        }*/
