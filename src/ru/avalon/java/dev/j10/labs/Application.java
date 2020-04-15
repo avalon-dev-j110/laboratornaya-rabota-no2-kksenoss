@@ -6,40 +6,49 @@ import ru.avalon.java.dev.j10.labs.shapes.Triangle;
 import ru.avalon.java.dev.j10.labs.shapes.Shape;
 import ru.avalon.java.dev.j10.labs.shapes.Polygon;
 import ru.avalon.java.dev.j10.labs.shapes.Rectangle;
-import ru.avalon.java.dev.j10.labs.shapes.Ellipse;
 import ru.avalon.java.dev.j10.labs.shapes.Section;
+import ru.avalon.java.dev.j10.labs.shapes.Circle;
+import ru.avalon.java.dev.j10.labs.shapes.Ellipse;
 
-
-
+//ЛР2 выполнена,в ппоследствии можно причесать и сделать аккуратнее
 
 
 public class Application {
 
     public static void main(String[] args) {
-        Shape[] shapes = new Shape[4];
-        /*shapes[0] =  new Cercle();
-        shapes[1] =  new Elipse();
-        shapes[2] =  new Polygon();
-        shapes[3] =  new Rectangle();
-        shapes[0] =  new Triangle();
-        shapes[1] =  new Triangle();
-        shapes[6] =  new Polygon();
-        shapes[7] =  new Rectangle();
-        shapes[8] =  new Triangle();
-        shapes[9] =  new Elipse();
-        */
+        Shape[] shapes = new Shape[10];
+       
         shapes[0] = new Triangle(new implPoint(7,8), new implPoint(5,9), new implPoint(3,5));
-            System.out.println("тест 1 треуг " + shapes[0].toString());
+            System.out.println("тест 1 фигура " + shapes[0].toString());
         
         shapes[1] = new Triangle(new implPoint(7,2), new implPoint(9,1), new implPoint(6,5));
-            System.out.println("тест 2 треуг " + shapes[1].toString());
+            System.out.println("тест 2 фигура " + shapes[1].toString());
             
-        shapes[2] = new Rectangle(new implPoint(2,2), new implPoint(2,20), new implPoint(30,2));
-            System.out.println("тест 2 прямоуг " + shapes[2].toString());
+        shapes[2] = new Rectangle(new implPoint(2,2), new implPoint(2,100), new implPoint(30,2));
+            System.out.println("тест 3 фигура " + shapes[2].toString());
             
-        shapes[3] = new Rectangle(new implPoint(0,0), new implPoint(0,3), new implPoint(9,0));
-            System.out.println("тест 2 прямоуг " + shapes[3].toString());
+        shapes[3] = new Rectangle(new implPoint(0,0), new implPoint(0,15), new implPoint(30,0));
+            System.out.println("тест 4 фигура " + shapes[3].toString());
+            
+        shapes[4] = new Circle(new implPoint(0,0), new implPoint(0,7));
+            System.out.println("тест 5 фигура " + shapes[4].toString());
+            
+        shapes[5] = new Circle(new implPoint(0,0), new implPoint(10,0));
+            System.out.println("тест 6 фигура " + shapes[5].toString());
      
+        shapes[6] = new Circle(new implPoint(0,0), new implPoint(0,1));
+            System.out.println("тест 7 фигура " + shapes[6].toString());
+            
+        shapes[7] = new Circle(new implPoint(0,0), new implPoint(5,0));
+            System.out.println("тест 8 фигура " + shapes[7].toString());
+            
+        shapes[8] = new Circle(new implPoint(0,0), new implPoint(0,3));
+            System.out.println("тест 9 фигура " + shapes[8].toString());
+            
+        shapes[9] = new Circle(new implPoint(0,0), new implPoint(7,0));
+            System.out.println("тест 10 фигура " + shapes[9].toString());
+            
+            
             Shape largestshape = findLargestArea(shapes);
             System.out.println("Наибольшая площадь " + largestshape);
      }

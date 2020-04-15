@@ -30,7 +30,7 @@ public class Rectangle implements Polygon{
     @Override
     public float getArea() {
         double area = Section.section(a,b)
-                + Section.section(a,c);
+                * Section.section(a,c);
         return (float)area;
     }
 

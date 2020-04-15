@@ -60,7 +60,7 @@ public class Triangle implements Polygon{
    
    @Override
    public String toString() {
-        return "Triangle perimeter = " + getPerimeter() + "// area =" + getArea() + "//a  тестовое" + a.getX() + a.getY();
+        return "Triangle perimeter = " + getPerimeter() + "// area =" + getArea();
    }
    
 }
